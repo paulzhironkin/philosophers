@@ -6,7 +6,7 @@
 /*   By: latahbah <latahbah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 12:57:48 by latahbah          #+#    #+#             */
-/*   Updated: 2022/06/21 16:22:58 by latahbah         ###   ########.fr       */
+/*   Updated: 2022/06/22 13:05:00 by latahbah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,9 @@ void	simulation(t_data *data, int i)
 	pthread_t		death_thread;
 
 	philosopher = philo_init(data, i);
-	pthread_create(&death_thread, NULL, check_alive, (void *)&philosopher);
+	if (pthread_create(&death_thread, NULL, check_alive, \
+	(void *)&philosopher) != 0)
+		error("Thread creation error!");
 	pthread_detach(death_thread);
 	while (philosopher.is_alive)
 	{
@@ -72,9 +74,7 @@ void	simulation(t_data *data, int i)
 		{
 			philosopher.dinner_times_needed--;
 			if (!philosopher.dinner_times_needed)
-			{
 				exit(0);
-			}
 		}
 		philo_sleep(&philosopher);
 		philo_think(&philosopher);

@@ -6,7 +6,7 @@
 /*   By: latahbah <latahbah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 16:31:24 by latahbah          #+#    #+#             */
-/*   Updated: 2022/06/21 15:26:05 by latahbah         ###   ########.fr       */
+/*   Updated: 2022/06/22 12:51:23 by latahbah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	free_data(t_data *data)
 	}
 	if (data->fork_mutexes)
 		free(data->fork_mutexes);
+	if (data->dt_mutexes)
+		free(data->dt_mutexes);
 	pthread_mutex_destroy(&data->constants.have_ate_num_mutex);
 	pthread_mutex_destroy(&data->constants.print_mutex);
 	if (data->constants.num_of_philos > 0)
@@ -37,5 +39,4 @@ void	free_data(t_data *data)
 	if (data->philosophers)
 		free(data->philosophers);
 	free(data);
-	data = NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: latahbah <latahbah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 16:07:58 by latahbah          #+#    #+#             */
-/*   Updated: 2022/06/19 16:21:38 by latahbah         ###   ########.fr       */
+/*   Updated: 2022/06/22 12:57:58 by latahbah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,6 @@ void	philo_sleep(t_philosopher *philosopher);
 void	philo_think(t_philosopher *philosopher);
 void	my_sleep(long long time);
 void	*death_checker(t_data *data);
-void	simulation(t_data *data);
+int		simulation(t_data *data);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: latahbah <latahbah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 12:59:48 by latahbah          #+#    #+#             */
-/*   Updated: 2022/06/20 16:35:17 by latahbah         ###   ########.fr       */
+/*   Updated: 2022/06/22 12:56:55 by latahbah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,6 @@ void	*death_checker(t_data *data)
 			i++;
 		}
 	}
-	free(data);
+	free_data(data);
 	return (NULL);
 }

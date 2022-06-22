@@ -6,7 +6,7 @@
 /*   By: latahbah <latahbah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 12:57:48 by latahbah          #+#    #+#             */
-/*   Updated: 2022/06/21 14:55:14 by latahbah         ###   ########.fr       */
+/*   Updated: 2022/06/22 12:57:42 by latahbah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static void	*philo_thread(void *data)
 	return (NULL);
 }
 
-void	simulation(t_data *data)
+int	simulation(t_data *data)
 {
 	int			i;
 
@@ -73,9 +73,14 @@ void	simulation(t_data *data)
 			&data->fork_mutexes[(i + 1) % data->constants.num_of_philos],
 			.dtm = &data->dt_mutexes[i]
 		};
-		pthread_create(&data->threads[i], NULL, \
-			philo_thread, (void *)&data->philosophers[i]);
+		if (pthread_create(&data->threads[i], NULL, \
+			philo_thread, (void *)&data->philosophers[i]) != 0)
+		{
+			return (error("Thread creation error!"));
+			free_data(data);
+		}
 		i++;
 	}
 	death_checker(data);
+	return (0);
 }
