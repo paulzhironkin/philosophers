@@ -6,7 +6,7 @@
 /*   By: latahbah <latahbah@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 12:59:48 by latahbah          #+#    #+#             */
-/*   Updated: 2022/06/22 12:56:55 by latahbah         ###   ########.fr       */
+/*   Updated: 2022/06/22 18:45:21 by latahbah         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	is_alive(t_philosopher *philosopher)
 		{
 			pthread_mutex_unlock(philosopher->dtm);
 			pthread_mutex_lock(&philosopher->constants->print_mutex);
-			printf("%zd %d is dead\n", timestamp(philosopher-> \
+			printf("%ld %d is dead\n", timestamp(philosopher-> \
 			constants->start_time), philosopher->id);
 			return (0);
 		}
