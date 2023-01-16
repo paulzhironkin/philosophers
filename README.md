@@ -30,3 +30,7 @@ Run program with parameters:
 ```Bash
 $ ./philo 5 800 200 200 7
 ```
+
+If it is possible for philosophers to live, program will output lifecycle of philosophers.
+
+If not - will end up with death of philosopher
