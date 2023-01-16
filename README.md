@@ -1,6 +1,6 @@
 # Ecole 42: Philosohers
 
-In this project I implemented a solution of dining philosophers problem - one of the classic problems used to describe synchronization issues in a multithreading progam. 
+In this project I implemented a solution of [dining philosophers problem](https://en.wikipedia.org/wiki/Dining_philosophers_problem) - one of the classic problems used to describe synchronization issues in a multithreading progam. 
 
 ### How to build:
 
