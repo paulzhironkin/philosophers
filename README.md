@@ -24,3 +24,9 @@ Program takes 4 arguments:
 | `time_to_die` | time to die without food in millisecond  |
 | `time_to_eat` | time spends to eat in milliseconds |
 | `time_to_sleep` | time spends to sleep in milliseconds |
+
+Run program with parameters:
+
+```Bash
+$ ./philo 5 800 200 200 7
+```
